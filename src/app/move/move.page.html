@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start" >
+      <ion-back-button default-href=" /detail "></ion-back-button>
+    </ion-buttons>
+    <ion-title>Move Details</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" *ngIf="move">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ move.name | titlecase }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Type: {{ move.type.name | titlecase }}</p>
+      <p>Power: {{ move.power }}</p>
+      <p>PP: {{ move.pp }}</p>
+      <p>Accuracy: {{ move.accuracy }}</p>
+      <p>Effect: {{ move.effect_entries[0].effect }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

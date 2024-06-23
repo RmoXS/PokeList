@@ -25,3 +25,27 @@
 #container a {
   text-decoration: none;
 }
+
+ion-item {
+  --transition: none;
+}
+
+ion-toggle {
+  --track-background: #959595;
+  --track-background-checked: #ffffff;
+
+  --handle-background: #ffffff;
+}
+
+button {
+  max-width: 100%;
+  min-width: 100%;
+}
+
+.forward {
+  align-content: center;
+}
+
+ion-searchbar {
+  --color: #676666;
+}

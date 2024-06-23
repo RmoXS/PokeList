@@ -1,20 +1,46 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+  <ion-toolbar color="warning">
+    <ion-grid>
+      <ion-row class="ion-justify-between">
+        <ion-col>
+          <ion-title> Poke List </ion-title>
+        </ion-col>
+        <ion-col class="ion-text-end">
+          <ion-title>
+            <ion-toggle
+              color="dark"
+              [(ngModel)]="paletteToggle"
+              (ionChange)="toggleChange($event)"
+            ></ion-toggle>
+          </ion-title>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-searchbar
+    placeholder="Search Pokemon (recommended by id)"
+    [(ngModel)]="findPokemon"
+    (ionInput)="handleInput($event)"
+  ></ion-searchbar>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list inset="true" *ngFor="let pokemon of pokemons">
+    <button>
+      <ion-item button detail="true" (click)="detailpage(pokemon.id)">
+        <ion-avatar slot="start">
+          <img
+            [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png'"
+            alt="{{ pokemon.name }}"
+          />
+        </ion-avatar>
+        <ion-label class="ion-text-capitalize">
+          <h2>{{ pokemon.name }}</h2>
+          <p>#{{pokemon.id}}</p>
+        </ion-label>
+      </ion-item>
+    </button>
+  </ion-list>
+
 </ion-content>
