@@ -3,7 +3,7 @@
     <ion-grid>
       <ion-row class="ion-justify-between">
         <ion-col>
-          <ion-title> Poke List </ion-title>
+          <ion-title> Pokemon List </ion-title>
         </ion-col>
         <ion-col class="ion-text-end">
           <ion-title>
@@ -26,16 +26,16 @@
     (ionInput)="handleInput($event)"
   ></ion-searchbar>
 
-  <ion-list inset="true" *ngFor="let pokemon of pokemons">
+  <ion-list style="background: none;" inset="true" *ngFor="let pokemon of pokemons">
     <button>
-      <ion-item button detail="true" (click)="detailpage(pokemon.id)">
+      <ion-item lines="none" button detail="true" (click)="detailpage(pokemon.id)">
         <ion-avatar slot="start">
           <img
             [src]="'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/' + pokemon.id + '.png'"
             alt="{{ pokemon.name }}"
           />
         </ion-avatar>
-        <ion-label class="ion-text-capitalize">
+        <ion-label class="ion-text-uppercase">
           <h2>{{ pokemon.name }}</h2>
           <p>#{{pokemon.id}}</p>
         </ion-label>

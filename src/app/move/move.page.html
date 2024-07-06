@@ -10,14 +10,14 @@
 <ion-content [fullscreen]="true" *ngIf="move">
   <ion-card>
     <ion-card-header>
-      <ion-card-title>{{ move.name | titlecase }}</ion-card-title>
+      <ion-card-title class="ion-text-uppercase">{{ move.name | titlecase }}</ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      <p>Type: {{ move.type.name | titlecase }}</p>
-      <p>Power: {{ move.power }}</p>
-      <p>PP: {{ move.pp }}</p>
-      <p>Accuracy: {{ move.accuracy }}</p>
-      <p>Effect: {{ move.effect_entries[0].effect }}</p>
+      <h2>Type: {{ move.type.name | titlecase }}</h2>
+      <h2>Power: {{ move.power }}</h2>
+      <h2>PP: {{ move.pp }}</h2>
+      <h2>Accuracy: {{ move.accuracy }}</h2>
+      <h2>Effect: {{ move.effect_entries[0].effect }}</h2>
     </ion-card-content>
   </ion-card>
 </ion-content>

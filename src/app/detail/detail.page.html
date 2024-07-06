@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button default-href="#"></ion-back-button>
     </ion-buttons>
-    <ion-title class="ion-text-capitalize">{{pokemon.name}}</ion-title>
+    <ion-title class="ion-text-uppercase">{{pokemon.name}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,24 +17,24 @@
           alt="{{ pokemon?.name}}"
         />
       </div>
-      <h2>Stats</h2>
+      <h1>Stats</h1>
       <ion-list>
         <ion-item *ngFor="let stat of pokemon.stats">
-          <ion-label>{{ stat.stat.name | titlecase }}</ion-label>
+          <ion-label class="ion-text-uppercase">{{ stat.stat.name | titlecase }}</ion-label>
           <ion-badge slot="end">{{ stat.base_stat }}</ion-badge>
         </ion-item>
       </ion-list>
-      <h2>Abilities</h2>
+      <h1>Abilities</h1>
       <ion-list>
         <ion-item *ngFor="let ability of pokemon?.abilities">
-          {{ability.ability.name | titlecase}}
+          <div class="ion-text-uppercase"> {{ability.ability.name | titlecase}} </div>
         </ion-item>
       </ion-list>
       <div>
-        <h2>Moves</h2>
+        <h1>Moves</h1>
         <ion-list>
           <ion-item button detail="true" *ngFor="let move of pokemon.moves" (click)="moveDetail(move.move.name)">
-            <ion-label>{{ move.move.name | titlecase }}</ion-label>
+            <ion-label class="ion-text-uppercase">{{ move.move.name | titlecase }}</ion-label>
           </ion-item>
         </ion-list>
       </div>
